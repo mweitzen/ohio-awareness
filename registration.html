@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Character encoding -->
+    <meta charset="utf-8" />
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="src/styles/fonts.css" />
+    <link rel="stylesheet" href="src/style.css" />
+
+    <!-- Site Details -->
+    <title>Registration - Beyond MBSR</title>
+    <meta name="description" content="" />
+    <meta name="theme-color" content="#fafafa" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:alt" content="" />
+
+    <!-- Icons -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.png" />
+
+    <!-- Web Manifest -->
+    <link rel="manifest" href="site.webmanifest" />
+  </head>
+  <body>
+    <header class="w-full bg-header">
+      <div class="h-20 max-w-7xl mx-auto px-4 flex items-center justify-start">
+        <a href="/" class="font-semibold text-lg"
+          ><img src="/logo.png" alt="Ohio Awareness Logo" class="h-12 w-auto"
+        /></a>
+      </div>
+    </header>
+    <main>
+      <div
+        class="w-full flex-1 flex flex-col gap-4 justify-center items-center"
+      >
+        <h1 class="text-center text-4xl font-semibold">Registration</h1>
+        <form
+          name="registration"
+          action="/success"
+          data-netlify="true"
+          class="card flex flex-col gap-4 bg-card/70 w-full max-w-2xl"
+        >
+          <!-- Name -->
+          <div class="flex flex-col gap-2">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <!-- Email -->
+          <div class="flex flex-col gap-2">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <!-- Job Title -->
+          <div class="flex flex-col gap-2">
+            <label for="job-title">Job Title *</label>
+            <input type="text" id="job-title" name="job-title" required />
+          </div>
+
+          <!-- Phone Number -->
+          <div class="flex flex-col gap-2">
+            <label for="phone-number">Phone Number</label>
+            <input type="tel" id="phone-number" name="phone-number" />
+          </div>
+
+          <!-- Address -->
+          <div class="flex flex-col gap-2">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" />
+          </div>
+
+          <!-- Preferred Pronouns -->
+          <div class="flex flex-col gap-2">
+            <label for="preferred-pronouns">Preferred Pronouns</label>
+            <select
+              id="preferred-pronouns"
+              name="preferred-pronouns"
+              class="flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 bg-background"
+            >
+              <option value="" selected disabled>Select One</option>
+              <option value="he/him">He/Him</option>
+              <option value="she/her">She/Her</option>
+              <option value="they/them">They/Them</option>
+            </select>
+          </div>
+
+          <!-- Previous Mediation Experience -->
+          <div class="flex flex-col gap-2">
+            <label for="meditation-experience"
+              >Meditation Experience (if applicable)</label
+            >
+            <textarea
+              id="meditation-experience"
+              name="meditation-experience"
+              rows="5"
+            ></textarea>
+          </div>
+
+          <input id="type" name="type" type="hidden" />
+
+          <!-- Register & Pay Button -->
+          <button
+            type="submit"
+            class="bg-primary hover:bg-primary/90 text-foregorund"
+          >
+            Register & Pay
+          </button>
+        </form>
+      </div>
+    </main>
+    <script>
+      // Get search params from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const userType = urlParams.get('role');
+
+      // Set the value of the hidden input field
+      document.getElementById('type').value = userType;
+    </script>
+  </body>
+</html>

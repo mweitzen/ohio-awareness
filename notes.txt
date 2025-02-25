@@ -1,0 +1,92 @@
+-- original WIX IPs
+185.230.63.107
+185.230.63.171
+185.230.63.186
+
+--colors
+
+raincloud
+#536168
+
+clove
+#453e39
+
+white snow
+#f5f4ee
+
+malibar
+#cfbea9
+
+mauve finery
+#cbb8c0
+
+-- hosting/services
+
+mail
+https://sendgrid.com/en-us/pricing
+
+netlify hosting
+
+netlify functions
+
+netlify mail
+https://www.netlify.com/platform/core/functions/
+
+
+payments
+square
+paypal
+
+
+-- colors
+
+#97f1e9
+#77ede3
+#58e9dd
+#38e5d6
+#1cddcd
+#18bdaf
+#149d92
+#107e75
+#0c5e57
+#083f3a
+#9de6eb
+#7fdfe5
+#61d7df
+#43d0d9
+#29c6d0
+#23a9b2
+#1d8d94
+#177177
+#115459
+#0b383b
+#a9dfdf
+#8fd5d5
+#75cccc
+#5bc2c2
+#43b6b6
+#399c9c
+#308282
+#266868
+#1c4e4e
+#133434
+#ffeb89
+#ffe566
+#ffdf42
+#ffda1e
+#f9d000
+#d6b200
+#b29500
+#8e7700
+#6b5900
+#473b00
+#ffd289
+#ffc466
+#ffb642
+#ffa91e
+#f99a00
+#d68400
+#b26e00
+#8e5800
+#6b4200
+#472c00

@@ -1,0 +1,143 @@
+@font-face {
+  font-family: 'Vanguard';
+  src: url('../assets/fonts/Fontspring-DEMO-vanguardcf-thin.otf')
+    format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vanguard';
+  src: url('../assets/fonts/Fontspring-DEMO-vanguardcf-thinoblique.otf')
+    format('opentype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vanguard';
+  src: url('../assets/fonts/Fontspring-DEMO-vanguardcf-light.otf')
+    format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vanguard';
+  src: url('../assets/fonts/Fontspring-DEMO-vanguardcf-lightoblique.otf')
+    format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vanguard';
+  src: url('../assets/fonts/Fontspring-DEMO-vanguardcf-regular.otf')
+    format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vanguard';
+  src: url('../assets/fonts/Fontspring-DEMO-vanguardcf-regularoblique.otf')
+    format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vanguard';
+  src: url('../assets/fonts/Fontspring-DEMO-vanguardcf-medium.otf')
+    format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vanguard';
+  src: url('../assets/fonts/Fontspring-DEMO-vanguardcf-mediumoblique.otf')
+    format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vanguard';
+  src: url('../assets/fonts/Fontspring-DEMO-vanguardcf-demibold.otf')
+    format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vanguard';
+  src: url('../assets/fonts/Fontspring-DEMO-vanguardcf-demiboldoblique.otf')
+    format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vanguard';
+  src: url('../assets/fonts/Fontspring-DEMO-vanguardcf-bold.otf')
+    format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vanguard';
+  src: url('../assets/fonts/Fontspring-DEMO-vanguardcf-boldoblique.otf')
+    format('opentype');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vanguard';
+  src: url('../assets/fonts/Fontspring-DEMO-vanguardcf-extrabold.otf')
+    format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vanguard';
+  src: url('../assets/fonts/Fontspring-DEMO-vanguardcf-extraboldoblique.otf')
+    format('opentype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vanguard';
+  src: url('../assets/fonts/Fontspring-DEMO-vanguardcf-heavy.otf')
+    format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vanguard';
+  src: url('../assets/fonts/Fontspring-DEMO-vanguardcf-heavyoblique.otf')
+    format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
