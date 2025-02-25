@@ -89,7 +89,7 @@ async function createPayment() {
   });
 
   const response = await fetch(
-    'https://ohiowareness.com/netlify/functions/square',
+    'https://ohiowareness.com/.netlify/functions/square',
     {
       method: 'POST',
       headers: {
