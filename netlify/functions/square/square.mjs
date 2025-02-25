@@ -21,7 +21,7 @@ export default async (event, context) => {
 
     const client = new Client({
       accessToken,
-      environment: Environment.Production, // Or Environment.Sandbox for testing
+      environment: Environment.Sandbox, // Or Environment.Sandbox for testing
     });
 
     const paymentsApi = client.paymentsApi;
