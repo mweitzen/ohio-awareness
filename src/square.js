@@ -41,9 +41,11 @@ async function createPayment(amount, token) {
   });
 
   if (response.ok) {
+    console.log('Payment Success');
     return response.json();
   }
 
+  console.log('Payment Failure');
   const error = await response.text();
   throw new Error(error);
 }

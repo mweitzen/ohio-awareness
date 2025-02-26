@@ -1,6 +1,8 @@
 import { SquareClient, SquareEnvironment } from 'square';
 
 export const handler = async (request) => {
+  console.log('Handling request...');
+
   if (request.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
@@ -32,14 +34,11 @@ export const handler = async (request) => {
       locationId,
     };
 
-    // Create a new payment
-    console.log(client.payments.create);
-    console.log('');
-    console.log('');
-    console.log('');
+    // Create a new paymen
     const response = await client.payments.create(requestBody);
 
     console.log('SUCCESS! ');
+
     // Return the response
     return {
       statusCode: 200,
