@@ -1,0 +1,144 @@
+const locationId = import.meta.env.VITE_SQUARE_LOCATION_ID;
+const applicationId = import.meta.env.VITE_SQUARE_APPLICATION_ID;
+
+declare global {
+  interface Window {
+    Square: any;
+  }
+}
+
+/**
+ * Initialize the card payment form
+ *
+ */
+async function initializeCard(payments: any) {
+  const cardOptions = {
+    style: {
+      input: {
+        backgroundColor: 'white',
+      },
+    },
+  };
+
+  const card = await payments.card(cardOptions);
+  await card.attach('#card');
+
+  return card;
+}
+
+/**
+ * Create a payment using the Square API
+ *
+ */
+async function createPayment(amount: number, token: string) {
+  const body = JSON.stringify({
+    locationId,
+    sourceId: token,
+    idempotencyKey: window.crypto.randomUUID(),
+    amount: amount,
+  });
+
+  const response = await fetch('/.netlify/functions/square', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body,
+  });
+
+  if (response.ok) {
+    return response.json();
+  }
+
+  const error = await response.text();
+  throw new Error(error);
+}
+
+/**
+ * Tokenize payment information using the Square API
+ *
+ */
+async function tokenize(paymentMethod: any) {
+  const result = await paymentMethod.tokenize();
+
+  if (result.status === 'OK') {
+    return result.token;
+  } else {
+    let errorMessage = `Tokenization failed-status: ${result.status}`;
+    if (result.errors) {
+      errorMessage += ` and errors: ${JSON.stringify(result.errors)}`;
+    }
+    throw new Error(errorMessage);
+  }
+}
+
+/**
+ * Display payment results to the user
+ *
+ */
+function displayPaymentResults(status: 'SUCCESS' | 'FAILURE') {
+  const statusContainer = document.getElementById(
+    'payment-status-container'
+  ) as HTMLDivElement;
+  if (status === 'SUCCESS') {
+    statusContainer.classList.remove('is-failure');
+    statusContainer.classList.add('is-success');
+  } else {
+    statusContainer.classList.remove('is-success');
+    statusContainer.classList.add('is-failure');
+  }
+
+  statusContainer.style.visibility = 'visible';
+}
+
+/**
+ * Main function
+ * Attach the card form to the DOM and add an event listener to the pay button
+ *
+ */
+document.addEventListener('DOMContentLoaded', async () => {
+  // Check if the Square SDK has loaded
+  if (!window.Square) {
+    throw new Error('Square.js failed to load properly');
+  }
+
+  // Initialize the Square Payments SDK
+  const payments = window.Square.payments(applicationId, locationId);
+
+  // Initialize the card payment form
+  let card;
+  try {
+    card = await initializeCard(payments);
+  } catch (error) {
+    console.error('Initializing Card failed', error);
+    return;
+  }
+
+  console.log('Card Initialized');
+
+  // Add an event listener to the button
+  const cardButton = document.getElementById('pay') as HTMLButtonElement;
+
+  // Check if the button exists
+  if (!cardButton) {
+    throw new Error('Pay button not found');
+  }
+
+  // Add an event listener to the button
+  cardButton.addEventListener('click', async (event) => {
+    event.preventDefault();
+
+    try {
+      cardButton.disabled = true;
+      const token = await tokenize(card);
+      const paymentResults = await createPayment(100, token);
+      displayPaymentResults('SUCCESS');
+
+      console.debug('Payment Success', paymentResults);
+    } catch (e) {
+      cardButton.disabled = false;
+      displayPaymentResults('FAILURE');
+      console.error(e.message);
+    }
+  });
+});

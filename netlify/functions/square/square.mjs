@@ -1,48 +1,52 @@
-import { Client, Environment } from 'square';
+import { SquareClient, SquareEnvironment } from 'square';
 
-export default async (event, context) => {
-  if (event.httpMethod !== 'POST') {
+export const handler = async (request) => {
+  if (request.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
   try {
-    const body = JSON.parse(event.body);
-    const { nonce, amount, currency } = body;
+    // Get the request body
+    const body = JSON.parse(request.body);
 
-    if (!nonce || !amount || !currency) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ error: 'Missing required parameters' }),
-      };
-    }
+    // Destructure the body
+    const { idempotencyKey, sourceId, amount, locationId } = body;
 
-    const accessToken = process.env.SQUARE_ACCESS_TOKEN; // Get from environment variables
-    const locationId = process.env.SQUARE_LOCATION_ID;
+    // Get the Square access token
+    const accessToken = process.env.VITE_SQUARE_ACCESS_TOKEN;
 
-    const client = new Client({
-      accessToken,
-      environment: Environment.Sandbox, // Or Environment.Sandbox for testing
+    // Create a new Square client
+    const client = new SquareClient({
+      token: accessToken,
+      environment: SquareEnvironment.Sandbox,
     });
 
-    const paymentsApi = client.paymentsApi;
-
+    // Create the request body
     const requestBody = {
-      sourceId: nonce,
+      sourceId,
       amountMoney: {
-        amount: BigInt(amount), // Amount in smallest currency unit (e.g., cents)
-        currency: currency,
+        amount: BigInt(amount),
+        currency: 'USD',
       },
-      idempotencyKey: require('crypto').randomBytes(36).toString('hex'), // Unique key to prevent duplicates
-      locationId: locationId,
+      idempotencyKey,
+      locationId,
     };
 
-    const response = await paymentsApi.createPayment(requestBody);
+    // Create a new payment
+    console.log(client.payments.create);
+    console.log('');
+    console.log('');
+    console.log('');
+    const response = await client.payments.create(requestBody);
 
+    console.log('SUCCESS! ');
+    // Return the response
     return {
       statusCode: 200,
       body: JSON.stringify(response.result),
     };
   } catch (error) {
+    // Return an error
     console.error('Error creating payment:', error);
     return {
       statusCode: 500,
