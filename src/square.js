@@ -136,7 +136,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       const paymentResults = await createPayment(amount, token);
       displayPaymentResults('SUCCESS');
 
-      console.debug('Payment Success', paymentResults);
+      // Redirect user to success page
+      return (window.location.href = '/success');
     } catch (e) {
       console.log('HMMMMMMMMM.............');
       console.log(e);
