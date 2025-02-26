@@ -42,7 +42,7 @@ async function createPayment(amount, token) {
 
   if (response.ok) {
     console.log('Payment Success');
-    return response.json();
+    return;
   }
 
   console.log('Payment Failure');
@@ -74,10 +74,16 @@ async function tokenize(paymentMethod) {
  */
 function displayPaymentResults(status) {
   const statusContainer = document.getElementById('payment-status-container');
+
+  console.log('Status -->', status);
+
   if (status === 'SUCCESS') {
+    console.log('Inside --> Payment Success');
     statusContainer.classList.remove('is-failure');
     statusContainer.classList.add('is-success');
   } else {
+    console.log('Inside --> Payment Failure');
+    console.log('Hmmmmmmm.......');
     statusContainer.classList.remove('is-success');
     statusContainer.classList.add('is-failure');
   }
@@ -130,6 +136,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       console.debug('Payment Success', paymentResults);
     } catch (e) {
+      console.log('HMMMMMMMMM.............');
+      console.log(e);
       cardButton.disabled = false;
       displayPaymentResults('FAILURE');
       console.error(e.message);
