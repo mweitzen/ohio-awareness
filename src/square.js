@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
       cardButton.disabled = true;
       const token = await tokenize(card);
-      const paymentResults = await createPayment(amount, token);
+      await createPayment(price, token);
       displayPaymentResults('SUCCESS');
 
       // Redirect user to success page
