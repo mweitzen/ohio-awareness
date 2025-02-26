@@ -1,6 +1,6 @@
 // Get the user type from the query parameter
 const urlParams = new URLSearchParams(window.location.search);
-const userType = urlParams.get('type');
+const userType = urlParams.get('role');
 
 const earlyBirdCutoff = new Date('03-03-2025');
 const currentDate = new Date();
