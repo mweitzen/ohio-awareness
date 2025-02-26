@@ -1,17 +1,11 @@
 const locationId = import.meta.env.VITE_SQUARE_LOCATION_ID;
 const applicationId = import.meta.env.VITE_SQUARE_APPLICATION_ID;
 
-declare global {
-  interface Window {
-    Square: any;
-  }
-}
-
 /**
  * Initialize the card payment form
  *
  */
-async function initializeCard(payments: any) {
+async function initializeCard(payments) {
   const cardOptions = {
     style: {
       input: {
@@ -30,7 +24,7 @@ async function initializeCard(payments: any) {
  * Create a payment using the Square API
  *
  */
-async function createPayment(amount: number, token: string) {
+async function createPayment(amount, token) {
   const body = JSON.stringify({
     locationId,
     sourceId: token,
@@ -58,7 +52,7 @@ async function createPayment(amount: number, token: string) {
  * Tokenize payment information using the Square API
  *
  */
-async function tokenize(paymentMethod: any) {
+async function tokenize(paymentMethod) {
   const result = await paymentMethod.tokenize();
 
   if (result.status === 'OK') {
@@ -76,10 +70,8 @@ async function tokenize(paymentMethod: any) {
  * Display payment results to the user
  *
  */
-function displayPaymentResults(status: 'SUCCESS' | 'FAILURE') {
-  const statusContainer = document.getElementById(
-    'payment-status-container'
-  ) as HTMLDivElement;
+function displayPaymentResults(status) {
+  const statusContainer = document.getElementById('payment-status-container');
   if (status === 'SUCCESS') {
     statusContainer.classList.remove('is-failure');
     statusContainer.classList.add('is-success');
@@ -117,7 +109,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   console.log('Card Initialized');
 
   // Add an event listener to the button
-  const cardButton = document.getElementById('pay') as HTMLButtonElement;
+  const cardButton = document.getElementById('pay');
 
   // Check if the button exists
   if (!cardButton) {
