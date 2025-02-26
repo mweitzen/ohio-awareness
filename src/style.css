@@ -89,6 +89,11 @@
   }
 }
 
+#card-container {
+  margin-top: 45px;
+  min-height: 90px;
+}
+
 #payment-form {
   max-width: 550px;
   min-width: 300px;
@@ -96,7 +101,6 @@
 }
 
 #payment-status-container {
-  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
