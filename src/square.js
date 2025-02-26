@@ -128,10 +128,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   cardButton.addEventListener('click', async (event) => {
     event.preventDefault();
 
+    const price = event.target.value;
+
     try {
       cardButton.disabled = true;
       const token = await tokenize(card);
-      const paymentResults = await createPayment(100, token);
+      const paymentResults = await createPayment(amount, token);
       displayPaymentResults('SUCCESS');
 
       console.debug('Payment Success', paymentResults);

@@ -47,7 +47,6 @@
         <h1 class="text-center text-4xl font-semibold">Registration</h1>
         <form
           name="registration"
-          action="/success"
           data-netlify="true"
           class="card flex flex-col gap-4 bg-card/70 w-full max-w-2xl"
         >
@@ -127,6 +126,9 @@
 
       // Set the value of the hidden input field
       document.getElementById('type').value = userType;
+
+      // Set the form action to payment page with the user type
+      document.querySelector('form').action = `/payment?role=${userType}`;
     </script>
   </body>
 </html>
