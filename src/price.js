@@ -2,7 +2,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const userType = urlParams.get('role');
 
-const earlyBirdCutoff = new Date('03-03-2025');
+const earlyBirdCutoff = new Date('2025-03-03');
 const currentDate = new Date();
 const isEarlyBird = currentDate < earlyBirdCutoff;
 
