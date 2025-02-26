@@ -28,7 +28,7 @@
   --radius: 0.625rem;
 
   --header: #0d203b;
-  --background: #f5f4ee;
+  --background: #0d203b;
   --foreground: #f5f4ee;
 }
 
@@ -70,7 +70,10 @@
     @apply bg-background text-foreground font-sans;
   }
   main {
-    @apply w-full min-h-[calc(100vh-80px)] bg-linear-to-br from-[#28bfc9] from-30% to-[#ffd500] to-70% p-6 flex flex-col;
+    @apply w-full;
+  }
+  .header {
+    @apply min-h-[calc(100vh-144px)] bg-linear-to-br from-[#28bfc9] from-30% to-[#ffd500] to-70% p-6 flex flex-col;
   }
   input {
     @apply flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 dark:bg-muted md:text-sm;

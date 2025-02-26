@@ -39,41 +39,76 @@
       </div>
     </header>
     <main>
-      <div class="grid place-content-center text-center flex-1">
-        <div>
-          <h1
-            class="text-5xl sm:text-7xl tracking-tighter sm:tracking-normal font-bold mb-2"
-          >
-            Beyond MBSR
-          </h1>
-          <p class="mb-6 font-medium text-lg">Meditation Retreat Date TBD</p>
-          <div class="flex gap-4 justify-center">
-            <a href="registration?role=nurse">
-              <button class="bg-primary font-semibold px-6 py-2 rounded">
-                Nurses
-              </button>
-            </a>
-            <a href="registration?role=doctor">
-              <button class="bg-secondary font-semibold px-6 py-2 rounded">
-                Doctors/Reps
-              </button>
-            </a>
+      <div class="header">
+        <div class="grid place-content-center text-center flex-1">
+          <div>
+            <h1
+              class="text-5xl sm:text-7xl tracking-tighter sm:tracking-normal font-bold mb-2"
+            >
+              Beyond MBSR
+            </h1>
+            <p class="mb-6 font-medium text-lg">Meditation Retreat Date TBD</p>
+            <div class="flex gap-4 justify-center">
+              <a href="registration?role=nurse">
+                <button class="bg-primary font-semibold px-6 py-2 rounded">
+                  Nurses
+                </button>
+              </a>
+              <a href="registration?role=doctor">
+                <button class="bg-secondary font-semibold px-6 py-2 rounded">
+                  Doctors/Reps
+                </button>
+              </a>
+            </div>
           </div>
         </div>
+        <div
+          class="text-center bg-white/20 rounded-lg text-card-foreground py-2 px-4 font-semibold"
+        >
+          <span class="text-xl sm:text-base"> Second Retreat </span>
+          <span class="sm:hidden">
+            <br />
+          </span>
+          <span> (included with 3/28/25 package) </span>
+          <span class="hidden sm:inline-block"> - </span>
+          <span class="sm:hidden">
+            <br />
+          </span>
+          <span> Date TBD </span>
+        </div>
       </div>
-      <div
-        class="text-center bg-white/20 rounded-lg text-card-foreground py-2 px-4 font-semibold"
-      >
-        <span class="text-xl sm:text-base"> Second Retreat </span>
-        <span class="sm:hidden">
-          <br />
-        </span>
-        <span> (included with 3/28/25 package) </span>
-        <span class="hidden sm:inline-block"> - </span>
-        <span class="sm:hidden">
-          <br />
-        </span>
-        <span> Date TBD </span>
+      <div>
+        <div class="h-16 gird place-content-center w-full">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-8 mx-auto"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+        </div>
+        <div class="pt-8 pb-16 flex flex-col items-center gap-8">
+          <h2 class="text-3xl font-bold">Registration Options</h2>
+          <div>
+            <div
+              class="grid grid-cols-2 border border-white [&:not(:last-child)]:divide-y-2 divide-white place-content-center"
+            >
+              <p>Regular Registration</p>
+              <p>Early Bird (ends 3/3/2025)</p>
+              <p>$400</p>
+              <p>$350</p>
+              <p>$800</p>
+              <p>$750</p>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <script type="module" src="/src/main.js"></script>
