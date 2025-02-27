@@ -108,7 +108,7 @@
             ></textarea>
           </div>
 
-          <input id="type" name="type" type="hidden" />
+          <input id="role" name="role" type="hidden" />
 
           <!-- Register & Pay Button -->
           <button
@@ -126,7 +126,7 @@
       const userType = urlParams.get('role');
 
       // Set the value of the hidden input field
-      document.getElementById('type').value = userType;
+      document.getElementById('role').value = userType;
 
       // Set the form action to payment page with the user type
       document.querySelector('form').action = `/payment?role=${userType}`;
