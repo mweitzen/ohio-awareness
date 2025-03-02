@@ -40,6 +40,8 @@
         /></a>
       </div>
     </header>
+
+    <!-- Success Page -->
     <main class="content">
       <div
         class="w-full flex-1 flex flex-col gap-4 justify-center items-center"
@@ -51,6 +53,8 @@
         </p>
       </div>
     </main>
+
+    <!-- Send confirmation -->
     <script>
       const endpoint = '/.netlify/functions/confirmation';
 
@@ -62,18 +66,7 @@
         body: JSON.stringify({
           email: 'Testing email body',
         }),
-      })
-        .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
-          console.log('SUCCESS');
-          console.log(data);
-        })
-        .catch((error) => {
-          console.log('ERROR');
-          console.error(error);
-        });
+      });
     </script>
   </body>
 </html>

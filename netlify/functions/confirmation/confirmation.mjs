@@ -5,14 +5,14 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 export const handler = async (request) => {
   const data = JSON.parse(request.body);
 
-  console.log('Handling request... ', data);
+  const { email, name, role } = data;
 
   const msg = {
-    to: 'mweitzenhoffer@gmail.com',
-    from: 'elliotedward99@gmail.com', // Use the email address or domain you verified above
-    subject: 'Exciting News Coming Soon!',
-    text: 'and easy to do anywhere, even with Node.js',
-    html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+    to: 'ewein00@gmail.com',
+    from: 'elliotedward99@gmail.com',
+    subject: 'MBSR Registration Confirmed!',
+    text: 'You have successfully registered for the MBSR course',
+    html: '<strong>You have successfully registered for the MBSR course</strong>',
   };
 
   try {
