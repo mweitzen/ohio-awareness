@@ -10,7 +10,7 @@ export const handler = async (request) => {
   const msg = {
     to: 'mweitzenhoffer@gmail.com',
     from: 'elliotedward99@gmail.com', // Use the email address or domain you verified above
-    subject: 'Sending with Twilio SendGrid is Fun',
+    subject: 'Exciting News Coming Soon!',
     text: 'and easy to do anywhere, even with Node.js',
     html: '<strong>and easy to do anywhere, even with Node.js</strong>',
   };

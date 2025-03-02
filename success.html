@@ -52,21 +52,29 @@
       </div>
     </main>
     <script>
-      const endpoint = "https://ohioawareness.com/.netlify/functions/confirmation";
+      const endpoint =
+        'https://ohioawareness.com/.netlify/functions/confirmation';
 
-      const response = await fetch(endpoint, {
-        method: "POST",
+      const response = fetch(endpoint, {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: "Testing email body",
+          email: 'Testing email body',
         }),
-      });
-
-      const data = await response.json();
-
-      console.log(data);
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log('SUCCESS');
+          console.log(data);
+        })
+        .catch((error) => {
+          console.log('ERROR');
+          console.error(error);
+        });
     </script>
   </body>
 </html>
