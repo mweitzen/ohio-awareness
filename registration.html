@@ -121,6 +121,8 @@
       </div>
     </main>
     <script>
+      let email = '';
+
       // Get search params from URL
       const urlParams = new URLSearchParams(window.location.search);
       const userType = urlParams.get('role');
@@ -128,8 +130,15 @@
       // Set the value of the hidden input field
       document.getElementById('role').value = userType;
 
+      // Update email
+      document.getElementById('email').addEventListener('input', (e) => {
+        email = e.target.value;
+      });
+
       // Set the form action to payment page with the user type
-      document.querySelector('form').action = `/payment?role=${userType}`;
+      document.querySelector(
+        'form'
+      ).action = `/payment?role=${userType}&email=${email}`;
     </script>
   </body>
 </html>

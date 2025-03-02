@@ -8,7 +8,7 @@ export const handler = async (request) => {
   const { email, name, role } = data;
 
   const msg = {
-    to: 'ewein00@gmail.com',
+    to: email,
     from: 'elliotedward99@gmail.com',
     subject: 'MBSR Registration Confirmed!',
     text: 'You have successfully registered for the MBSR course',

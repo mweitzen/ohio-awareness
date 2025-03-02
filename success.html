@@ -53,20 +53,5 @@
         </p>
       </div>
     </main>
-
-    <!-- Send confirmation -->
-    <script>
-      const endpoint = '/.netlify/functions/confirmation';
-
-      const response = fetch(endpoint, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: 'Testing email body',
-        }),
-      });
-    </script>
   </body>
 </html>

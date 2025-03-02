@@ -97,6 +97,10 @@ function displayPaymentResults(status) {
  *
  */
 document.addEventListener('DOMContentLoaded', async () => {
+  // Get user email from query string
+  const urlParams = new URLSearchParams(window.location.search);
+  const email = urlParams.get('email');
+
   // Check if the Square SDK has loaded
   if (!window.Square) {
     throw new Error('Square.js failed to load properly');
@@ -135,6 +139,19 @@ document.addEventListener('DOMContentLoaded', async () => {
       const token = await tokenize(card);
       await createPayment(price, token);
       displayPaymentResults('SUCCESS');
+
+      // Send confirmation email
+      const endpoint = '/.netlify/functions/confirmation';
+
+      await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+        }),
+      });
 
       // Redirect user to success page
       return (window.location.href = '/success');
