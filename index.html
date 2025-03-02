@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="src/style.css" />
     <link rel="stylesheet" href="src/styles/fonts.css" />
 
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Site Details -->
     <title>Beyond MBSR</title>
     <meta name="description" content="" />
@@ -33,35 +41,61 @@
     <link rel="manifest" href="site.webmanifest" />
   </head>
   <body>
+    <!-- Navigation Header -->
     <header class="w-full bg-header">
       <div class="h-20 max-w-7xl mx-auto px-4 flex items-center justify-start">
         <img src="/logo.png" alt="Ohio Awareness Logo" class="h-12 w-auto" />
       </div>
     </header>
     <main>
+      <!-- Hero Section -->
       <div class="header">
         <div class="grid place-content-center text-center flex-1">
-          <div>
+          <div class="space-y-8">
+            <!-- Title -->
             <h1
-              class="text-5xl sm:text-7xl tracking-tighter sm:tracking-normal font-bold mb-2"
+              class="text-5xl sm:text-7xl tracking-tighter sm:tracking-normal font-bold"
             >
               Beyond MBSR
             </h1>
-            <p class="mb-6 font-medium text-lg">Meditation Retreat Date TBD</p>
+
+            <!-- When -->
+            <p class="mb-6 font-light sm:text-lg text-base">
+              <span class="font-bold">When:</span> March 22, 2025 <br />
+              9:00am-4:00pm - Bagels & Coffee at 8:30am
+
+              <br />
+              <!-- Where -->
+              <span class="font-bold">Where:</span> University Hospital Seidman
+              Cancer Center Main Campus <br />
+              11100 Euclid Ave, Cleveland, OH 44106 | Meditation Room <br />
+              Lunch Provided
+            </p>
+
+            <!-- Early Bird Special -->
+            <p id="early-bird-display" class="font-extrabold uppercase">
+              Early Bird Special $50 Off - Ends March 10
+            </p>
+
+            <!-- Buttons -->
             <div class="flex gap-4 justify-center">
               <a href="registration?role=nurse">
-                <button class="bg-primary font-semibold px-6 py-2 rounded">
+                <button class="bg-primary font-semibold px-6 py-2 rounded-full">
                   Nurses
                 </button>
               </a>
               <a href="registration?role=doctor">
-                <button class="bg-secondary font-semibold px-6 py-2 rounded">
+                <button
+                  class="bg-secondary font-semibold px-6 py-2 rounded-full"
+                >
                   Doctors/Reps
                 </button>
               </a>
             </div>
           </div>
         </div>
+
+        <!-- Second Retreat -->
         <div
           class="text-center bg-white/20 rounded-lg text-card-foreground py-2 px-4 font-semibold"
         >
@@ -77,8 +111,13 @@
           <span> Date TBD </span>
         </div>
       </div>
+
+      <!-- Registration Section -->
       <div>
-        <div class="h-16 gird place-content-center w-full">
+        <!-- Down Arrow -->
+        <div
+          class="h-16 gird place-content-center w-full animate animate-bounce"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -94,6 +133,8 @@
             />
           </svg>
         </div>
+
+        <!-- Registration Options -->
         <div class="pt-8 pb-20 flex flex-col items-center gap-8">
           <h2 class="text-3xl font-bold">Registration Options</h2>
           <div>
