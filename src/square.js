@@ -100,6 +100,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Get user email from query string
   const urlParams = new URLSearchParams(window.location.search);
   const email = urlParams.get('email');
+  const role = urlParams.get('role');
+
+  // Redirect to homepage if no role  or email is provided
+  if (!role || !email) {
+    window.location.href = '/';
+  }
 
   // Check if the Square SDK has loaded
   if (!window.Square) {

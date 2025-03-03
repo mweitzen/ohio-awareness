@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
   const userType = urlParams.get('role');
 
+  // Check if the user is eligible for the early bird discount
   const earlyBirdCutoff = new Date('2025-03-11');
   const currentDate = new Date();
   const isEarlyBird = currentDate < earlyBirdCutoff;
