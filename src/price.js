@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
   const userType = urlParams.get('role');
 
-  const earlyBirdCutoff = new Date('2025-03-03');
+  const earlyBirdCutoff = new Date('2025-03-11');
   const currentDate = new Date();
   const isEarlyBird = currentDate < earlyBirdCutoff;
 

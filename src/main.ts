@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     throw new Error('Element not found');
   }
 
-  if (now > earlyBirdDate) {
+  if (earlyBirdDate < now) {
     element.style.display = 'none';
   }
 });
