@@ -138,7 +138,7 @@
       const userType = urlParams.get('role');
 
       // Redirect to homepage if no role is provided
-      if (!userType) {
+      if (!userType || (userType !== 'doctor' && userType !== 'nurse')) {
         window.location.href = '/';
       }
 
