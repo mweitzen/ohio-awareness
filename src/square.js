@@ -156,11 +156,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       // Redirect user to success page
       return (window.location.href = '/success');
     } catch (e) {
-      console.log('HMMMMMMMMM.............');
-      console.log(e);
       cardButton.disabled = false;
       displayPaymentResults('FAILURE');
-      console.error(e.message);
     }
   });
 });

@@ -11,8 +11,8 @@ export const handler = async (request) => {
     to: email,
     from: 'elliotedward99@gmail.com',
     subject: 'MBSR Registration Confirmed!',
-    text: 'You have successfully registered for the MBSR course',
-    html: '<strong>You have successfully registered for the MBSR course</strong>',
+    text: 'Thank you! You have successfully registered for the MBSR course',
+    html: '<p><strong>Thank You!</strong></p> <p>You have successfully registered for the MBSR course</p>',
   };
 
   try {
