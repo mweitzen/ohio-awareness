@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const role = urlParams.get('role');
 
   // Redirect to homepage if no role  or email is provided
-  if (!role || !email) {
+  if (!role || !email || role !== 'doctor' || role !== 'nurse') {
     window.location.href = '/';
   }
 
