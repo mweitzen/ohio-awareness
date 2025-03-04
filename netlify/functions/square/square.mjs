@@ -17,6 +17,8 @@ export const handler = async (request) => {
     // Get the Square access token
     const accessToken = process.env.VITE_SQUARE_ACCESS_TOKEN;
 
+    console.log(accessToken);
+
     // Create a new Square client
     const client = new SquareClient({
       token: accessToken,
