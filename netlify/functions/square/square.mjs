@@ -20,7 +20,7 @@ export const handler = async (request) => {
     // Create a new Square client
     const client = new SquareClient({
       token: accessToken,
-      environment: SquareEnvironment.Production,
+      environment: SquareEnvironment.Sandbox,
     });
 
     // Create the request body
