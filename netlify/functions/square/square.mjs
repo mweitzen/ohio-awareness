@@ -27,7 +27,7 @@ export const handler = async (request) => {
     const requestBody = {
       sourceId,
       amountMoney: {
-        amount: BigInt(amount),
+        amount: BigInt(1),
         currency: 'USD',
       },
       idempotencyKey,
