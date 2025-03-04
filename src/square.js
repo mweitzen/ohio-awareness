@@ -103,8 +103,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   const role = urlParams.get('role');
 
   // Redirect to homepage if no role  or email is provided
-  if (!role || !email || role !== 'doctor' || role !== 'nurse') {
-    window.location.href = '/';
+  if (!role || !email) {
+    if (role !== 'doctor' || role !== 'nurse') {
+      window.location.href = '/';
+    }
   }
 
   // Check if the Square SDK has loaded
