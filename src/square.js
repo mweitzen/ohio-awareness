@@ -97,6 +97,7 @@ function displayPaymentResults(status) {
  *
  */
 document.addEventListener('DOMContentLoaded', async () => {
+  console.log(applicationId);
   // Get user email from query string
   const urlParams = new URLSearchParams(window.location.search);
   const email = urlParams.get('email');
