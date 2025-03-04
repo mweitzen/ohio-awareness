@@ -78,12 +78,9 @@ function displayPaymentResults(status) {
   console.log('Status -->', status);
 
   if (status === 'SUCCESS') {
-    console.log('Inside --> Payment Success');
     statusContainer.classList.remove('is-failure');
     statusContainer.classList.add('is-success');
   } else {
-    console.log('Inside --> Payment Failure');
-    console.log('Hmmmmmmm.......');
     statusContainer.classList.remove('is-success');
     statusContainer.classList.add('is-failure');
   }
@@ -97,7 +94,6 @@ function displayPaymentResults(status) {
  *
  */
 document.addEventListener('DOMContentLoaded', async () => {
-  console.log(applicationId);
   // Get user email from query string
   const urlParams = new URLSearchParams(window.location.search);
   const email = urlParams.get('email');
