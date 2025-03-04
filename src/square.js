@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
       cardButton.disabled = true;
       const token = await tokenize(card);
-      await createPayment(price, token);
+      await createPayment(1, token);
       displayPaymentResults('SUCCESS');
 
       // Send confirmation email
