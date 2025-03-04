@@ -24,7 +24,8 @@ export const handler = async (request) => {
       token: accessToken,
       environment: SquareEnvironment.Production,
     });
-
+    console.log('Client Initialized');
+    console.log(client);
     // Create the request body
     const requestBody = {
       sourceId,
