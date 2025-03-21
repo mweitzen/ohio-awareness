@@ -57,7 +57,7 @@
         <h1 class="text-center text-4xl font-semibold">Registration</h1>
         <form
           name="registration"
-          action="/payment"
+          action="/success"
           data-netlify="true"
           class="card flex flex-col gap-4 bg-card/70 w-full max-w-2xl"
         >
@@ -118,14 +118,15 @@
             ></textarea>
           </div>
 
-          <input id="role" name="role" type="hidden" />
+          <!-- <input id="role" name="role" type="hidden" /> -->
 
           <!-- Register & Pay Button -->
           <button
             type="submit"
             class="bg-primary hover:bg-primary/90 text-foregorund"
           >
-            Register & Pay
+            <!-- Register & Pay -->
+            Register
           </button>
         </form>
       </div>
@@ -134,25 +135,40 @@
       let email = '';
 
       // Get search params from URL
-      const urlParams = new URLSearchParams(window.location.search);
-      const userType = urlParams.get('role');
+      // const urlParams = new URLSearchParams(window.location.search);
+      // const userType = urlParams.get('role');
 
       // Redirect to homepage if no role is provided
-      if (!userType || (userType !== 'doctor' && userType !== 'nurse')) {
-        window.location.href = '/';
-      }
+      // if (!userType || (userType !== 'doctor' && userType !== 'nurse')) {
+      //   window.location.href = '/';
+      // }
 
       // Set the value of the hidden input field
-      document.getElementById('role').value = userType;
+      // document.getElementById('role').value = userType;
 
       // Update email
       document.getElementById('email').addEventListener('input', (e) => {
         email = e.target.value;
 
         // Set the form action to payment page with the user type
-        document.querySelector(
-          'form'
-        ).action = `/payment?role=${userType}&email=${email}`;
+        // document.querySelector(
+        //   'form'
+        // ).action = `/payment?role=${userType}&email=${email}`;
+        // document.querySelector('form').action = `/success?email=${email}`;
+        document.querySelector('form').addEventListener('submit', async () => {
+          // Send confirmation email
+          const endpoint = '/.netlify/functions/confirmation';
+
+          await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              email,
+            }),
+          });
+        });
       });
     </script>
   </body>
